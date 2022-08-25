@@ -1,0 +1,15 @@
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/bin/Debug/net6.0/Infrastructure.deps.json
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/bin/Debug/net6.0/Infrastructure.dll
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/bin/Debug/net6.0/Infrastructure.pdb
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/bin/Debug/net6.0/ApplicationCore.dll
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/bin/Debug/net6.0/ApplicationCore.pdb
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/obj/Debug/net6.0/Infrastructure.csproj.AssemblyReference.cache
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/obj/Debug/net6.0/Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/obj/Debug/net6.0/Infrastructure.AssemblyInfoInputs.cache
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/obj/Debug/net6.0/Infrastructure.AssemblyInfo.cs
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/obj/Debug/net6.0/Infrastructure.csproj.CoreCompileInputs.cache
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/obj/Debug/net6.0/Infrastructure.csproj.CopyComplete
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/obj/Debug/net6.0/Infrastructure.dll
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/obj/Debug/net6.0/refint/Infrastructure.dll
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/obj/Debug/net6.0/Infrastructure.pdb
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/obj/Debug/net6.0/ref/Infrastructure.dll

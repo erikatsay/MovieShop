@@ -1,0 +1,12 @@
+/Users/erikatsay/RiderProjects/MovieShopMVC/ApplicationCore/bin/Debug/net6.0/ApplicationCore.deps.json
+/Users/erikatsay/RiderProjects/MovieShopMVC/ApplicationCore/bin/Debug/net6.0/ApplicationCore.dll
+/Users/erikatsay/RiderProjects/MovieShopMVC/ApplicationCore/bin/Debug/net6.0/ApplicationCore.pdb
+/Users/erikatsay/RiderProjects/MovieShopMVC/ApplicationCore/obj/Debug/net6.0/ApplicationCore.csproj.AssemblyReference.cache
+/Users/erikatsay/RiderProjects/MovieShopMVC/ApplicationCore/obj/Debug/net6.0/ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+/Users/erikatsay/RiderProjects/MovieShopMVC/ApplicationCore/obj/Debug/net6.0/ApplicationCore.AssemblyInfoInputs.cache
+/Users/erikatsay/RiderProjects/MovieShopMVC/ApplicationCore/obj/Debug/net6.0/ApplicationCore.AssemblyInfo.cs
+/Users/erikatsay/RiderProjects/MovieShopMVC/ApplicationCore/obj/Debug/net6.0/ApplicationCore.csproj.CoreCompileInputs.cache
+/Users/erikatsay/RiderProjects/MovieShopMVC/ApplicationCore/obj/Debug/net6.0/ApplicationCore.dll
+/Users/erikatsay/RiderProjects/MovieShopMVC/ApplicationCore/obj/Debug/net6.0/refint/ApplicationCore.dll
+/Users/erikatsay/RiderProjects/MovieShopMVC/ApplicationCore/obj/Debug/net6.0/ApplicationCore.pdb
+/Users/erikatsay/RiderProjects/MovieShopMVC/ApplicationCore/obj/Debug/net6.0/ref/ApplicationCore.dll
