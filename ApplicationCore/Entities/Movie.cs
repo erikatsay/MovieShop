@@ -28,6 +28,8 @@ public class Movie
     public string? CreatedBy { get; set; }
     public decimal? Rating { get; set; }
 
+    public ICollection<MovieCast> CastsofMovie { get; set; }
     public ICollection<MovieGenre> GenresOfMovie { get; set; }
     public ICollection<Trailer> Trailers { get; set; }
+    
 }
