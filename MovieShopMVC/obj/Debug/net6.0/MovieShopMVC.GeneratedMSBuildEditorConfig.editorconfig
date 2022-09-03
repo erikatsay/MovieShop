@@ -15,8 +15,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/erikatsay/RiderProjects/MovieShopMVC/MovieShopMVC
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/erikatsay/RiderProjects/MovieShopMVC/MovieShopMVC/Views/Accounts/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudHMvSW5kZXguY3NodG1s
+[/Users/erikatsay/RiderProjects/MovieShopMVC/MovieShopMVC/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/erikatsay/RiderProjects/MovieShopMVC/MovieShopMVC/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/erikatsay/RiderProjects/MovieShopMVC/MovieShopMVC/Views/Home/Index.cshtml]

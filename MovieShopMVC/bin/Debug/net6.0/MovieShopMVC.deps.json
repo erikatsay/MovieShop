@@ -87,6 +87,25 @@
         }
       },
       "MessagePackAnalyzer/2.1.152": {},
+      "Microsoft.AspNetCore.Cryptography.Internal/7.0.0-preview.7.22376.6": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.37606"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Cryptography.KeyDerivation/7.0.0-preview.7.22376.6": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Cryptography.Internal": "7.0.0-preview.7.22376.6"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.37606"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Razor.Language/6.0.0": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {
@@ -2135,6 +2154,7 @@
       "Infrastructure/1.0.0": {
         "dependencies": {
           "ApplicationCore": "1.0.0",
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation": "7.0.0-preview.7.22376.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0-preview.7.22376.2"
         },
         "runtime": {
@@ -2190,6 +2210,20 @@
       "sha512": "sha512-uJhZlGMkXDaFYsH8V9S6o1EyvsUqB9mpU4DVBXNr0DXZVzZMhuLP1IkLj5xK3EKlaAcvkFkZv3eSvuz360wb3Q==",
       "path": "messagepackanalyzer/2.1.152",
       "hashPath": "messagepackanalyzer.2.1.152.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Cryptography.Internal/7.0.0-preview.7.22376.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SISWv6WT5U7uoPesI81Q2iZ+stafZsx2UZz5bACWnwCNuDla19qM03NYRhDWk99TLthKFp90aEJepWa0KkzGkg==",
+      "path": "microsoft.aspnetcore.cryptography.internal/7.0.0-preview.7.22376.6",
+      "hashPath": "microsoft.aspnetcore.cryptography.internal.7.0.0-preview.7.22376.6.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Cryptography.KeyDerivation/7.0.0-preview.7.22376.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-O5eXvKwf9gLQUsgf43sgSZBlb9rKDDM2mzOVnJaGbBKKxMNTmh0H80CNvwvTS/2T1pxZ1K0dfUnYTUM7pBf7qw==",
+      "path": "microsoft.aspnetcore.cryptography.keyderivation/7.0.0-preview.7.22376.6",
+      "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.7.0.0-preview.7.22376.6.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Language/6.0.0": {
       "type": "package",

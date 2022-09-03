@@ -2,7 +2,9 @@ using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Net.NetworkInformation;
 using ApplicationCore.Entities;
+using Azure.Core;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Intrastructure.Data;
@@ -30,8 +32,9 @@ public class MovieShopDbContext: DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Movie>();
+        modelBuilder.Entity<Movie>(ConfiqureMovie);
         modelBuilder.Entity<MovieGenre>(ConfigureMovieGenre);
+        modelBuilder.Entity<Cast>(ConfigureCast);
         modelBuilder.Entity<User>(ConfigureUser);
         modelBuilder.Entity<MovieCast>(ConfigureMovieCast);
         modelBuilder.Entity<Favorite>(ConfigureFavorite);
@@ -40,6 +43,8 @@ public class MovieShopDbContext: DbContext
         modelBuilder.Entity<UserRole>(ConfigureUserRole);
 
     }
+
+    
 
     private void ConfigureUserRole(EntityTypeBuilder<UserRole> builder)
     {
@@ -50,10 +55,9 @@ public class MovieShopDbContext: DbContext
     private void ConfigurePurchase(EntityTypeBuilder<Purchase> builder)
     {
         builder.ToTable("Purchases");
-        builder.HasKey(mg => new { mg.MovieId, mg.UserId });
+        builder.HasKey(m => new { m.MovieId, m.UserId });
         builder.Property(m => m.PurchaseNumber).HasColumnType("UniqueIdentifier");
         builder.Property(m => m.TotalPrice).HasColumnType("decimal(5, 2)");
-       
     }
 
     private void ConfigureReview(EntityTypeBuilder<Review> builder)
@@ -79,12 +83,22 @@ public class MovieShopDbContext: DbContext
     private void ConfigureUser(EntityTypeBuilder<User> builder)
     {
         builder.HasKey(m => m.Id);
+        builder.HasIndex(u => u.Email).IsUnique();
         builder.Property((m => m.Email)).HasMaxLength(256);
         builder.Property(m => m.FirstName).HasMaxLength(128);
         builder.Property(m => m.HashedPassword).HasMaxLength(1024);
         builder.Property(m => m.LastName).HasMaxLength(128);
-        builder.Property(m => m.PhoneNumber).HasMaxLength(16);
+        builder.Property(m => m.PhoneNumber).HasMaxLength(16).IsRequired(false);
+        builder.Property(m => m.ProfilePictureUrl).IsRequired(false);
         builder.Property(m => m.Salt).HasMaxLength(1024);
+        builder.Property(m => m.IsLocked).HasDefaultValue(false);
+    }
+    
+    private void ConfigureCast(EntityTypeBuilder<Cast> builder)
+    {
+        builder.HasKey(m => m.Id);
+        builder.Property(m => m.Name).HasMaxLength(128);
+        builder.Property(m => m.ProfilePath).HasMaxLength(2084);
     }
 
     private void ConfigureMovieGenre(EntityTypeBuilder<MovieGenre> builder)
@@ -97,16 +111,16 @@ public class MovieShopDbContext: DbContext
     {
         // specify all the Fluent API rules
         builder.HasKey(m => m.Id);
-        builder.Property(m => m.Title).HasMaxLength(512);
-        builder.Property(m => m.Overview).HasMaxLength(4096);
-        builder.Property(m => m.Tagline).HasMaxLength(512);
-        builder.Property(m => m.ImdbUrl).HasMaxLength(2084);
-        builder.Property(m => m.TmdbUrl).HasMaxLength(2084);
-        builder.Property(m => m.PosterUrl).HasMaxLength(2084);
-        builder.Property(m => m.BackdropUrl).HasMaxLength(2084);
-        builder.Property(m => m.OriginalLanguage).HasMaxLength(64);
-        builder.Property(m => m.UpdatedBy).HasMaxLength(512);
-        builder.Property(m => m.CreatedBy).HasMaxLength(512);
+        builder.Property(m => m.Title).HasMaxLength(256).IsRequired(false);
+        builder.Property(m => m.Overview).IsRequired(false);
+        builder.Property(m => m.Tagline).HasMaxLength(512).IsRequired(false);
+        builder.Property(m => m.ImdbUrl).HasMaxLength(2084).IsRequired(false);
+        builder.Property(m => m.TmdbUrl).HasMaxLength(2084).IsRequired(false);
+        builder.Property(m => m.PosterUrl).HasMaxLength(2084).IsRequired(false);
+        builder.Property(m => m.BackdropUrl).HasMaxLength(2084).IsRequired(false);
+        builder.Property(m => m.OriginalLanguage).HasMaxLength(64).IsRequired(false);
+        builder.Property(m => m.UpdatedBy).IsRequired(false);
+        builder.Property(m => m.CreatedBy).IsRequired(false);
 
         builder.Property(m => m.Price).HasColumnType("decimal(5, 2)").HasDefaultValue(9.9m);
         builder.Property(m => m.Budget).HasColumnType("decimal(18, 4)").HasDefaultValue(9.9m);

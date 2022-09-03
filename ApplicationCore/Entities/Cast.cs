@@ -8,7 +8,7 @@ public class Cast
     public string Gender { get; set; }
     
     [MaxLength(128)]
-    public int Name { get; set; }
+    public string Name { get; set; }
     
     [MaxLength(2084)]
     public string ProfilePath { get; set; }

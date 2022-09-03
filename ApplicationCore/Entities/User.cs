@@ -13,4 +13,7 @@ public class User
     public string PhoneNumber { get; set; }= null!;
     public string ProfilePictureUrl { get; set; } = null!;
     public string Salt { get; set; }
+
+    public ICollection<UserRole> RolesOfUser { get; set; }
+    public ICollection<Review> Reviews { get; set; }
 }

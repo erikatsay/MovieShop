@@ -9,6 +9,7 @@
       "Infrastructure/1.0.0": {
         "dependencies": {
           "ApplicationCore": "1.0.0",
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation": "7.0.0-preview.7.22376.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0-preview.7.22376.2"
         },
         "runtime": {
@@ -46,6 +47,25 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.5.0.0",
             "fileVersion": "1.500.21.51401"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Cryptography.Internal/7.0.0-preview.7.22376.6": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.37606"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Cryptography.KeyDerivation/7.0.0-preview.7.22376.6": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Cryptography.Internal": "7.0.0-preview.7.22376.6"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.37606"
           }
         }
       },
@@ -614,6 +634,20 @@
       "sha512": "sha512-VfF88dqrgKXZNOS/y4XrX/jmIfP3pkY+hBUzBNpoKml1nR+QshX6XlXWyToLtWV80TDQ1CmUVCJksktDg5+j1w==",
       "path": "azure.identity/1.5.0",
       "hashPath": "azure.identity.1.5.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Cryptography.Internal/7.0.0-preview.7.22376.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SISWv6WT5U7uoPesI81Q2iZ+stafZsx2UZz5bACWnwCNuDla19qM03NYRhDWk99TLthKFp90aEJepWa0KkzGkg==",
+      "path": "microsoft.aspnetcore.cryptography.internal/7.0.0-preview.7.22376.6",
+      "hashPath": "microsoft.aspnetcore.cryptography.internal.7.0.0-preview.7.22376.6.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Cryptography.KeyDerivation/7.0.0-preview.7.22376.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-O5eXvKwf9gLQUsgf43sgSZBlb9rKDDM2mzOVnJaGbBKKxMNTmh0H80CNvwvTS/2T1pxZ1K0dfUnYTUM7pBf7qw==",
+      "path": "microsoft.aspnetcore.cryptography.keyderivation/7.0.0-preview.7.22376.6",
+      "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.7.0.0-preview.7.22376.6.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
       "type": "package",

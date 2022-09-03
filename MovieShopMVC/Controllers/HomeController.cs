@@ -17,10 +17,11 @@ public class HomeController : Controller
         _movieService = movieService;
     }
 
-    public IActionResult Index()
+    [HttpGet]
+    public async Task<IActionResult> Index()
     {
         
-        var movies = _movieService.GetTop30GrossingMovies();
+        var movies = await _movieService.GetTop30GrossingMovies();
         
         return View(movies);
     }

@@ -1,7 +1,8 @@
+@using ApplicationCore.Models
 @model ApplicationCore.Models.MovieCardModel
 
-<div class="card md-4">
+<div class="card mb-4">
     <a asp-controller="Movies" asp-action="Details" asp-route-id="@Model.Id">
-        <img class = "img-fluid" src="@Model.PosterUrl"/>
+        <img src="@Model.PosterUrl"  class = "img-fluid" alt="@Model.Title"/>
     </a>
 </div>

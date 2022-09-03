@@ -279,3 +279,5 @@
 /Users/erikatsay/RiderProjects/MovieShopMVC/MovieShopMVC/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
 /Users/erikatsay/RiderProjects/MovieShopMVC/MovieShopMVC/bin/Debug/net6.0/Mono.TextTemplating.dll
 /Users/erikatsay/RiderProjects/MovieShopMVC/MovieShopMVC/bin/Debug/net6.0/System.CodeDom.dll
+/Users/erikatsay/RiderProjects/MovieShopMVC/MovieShopMVC/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/erikatsay/RiderProjects/MovieShopMVC/MovieShopMVC/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll

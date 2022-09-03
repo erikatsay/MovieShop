@@ -34,9 +34,10 @@ namespace Intrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Name")
+                    b.Property<string>("Name")
+                        .IsRequired()
                         .HasMaxLength(128)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProfilePath")
                         .IsRequired()
@@ -94,62 +95,64 @@ namespace Intrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("BackdropUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(2084)
+                        .HasColumnType("nvarchar(2084)");
 
                     b.Property<decimal?>("Budget")
-                        .HasColumnType("decimal(18,2)");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("decimal(18, 4)")
+                        .HasDefaultValue(9.9m);
 
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
 
                     b.Property<string>("ImdbUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(2084)
+                        .HasColumnType("nvarchar(2084)");
 
                     b.Property<string>("OriginalLanguage")
-                        .IsRequired()
                         .HasMaxLength(64)
                         .HasColumnType("nvarchar(64)");
 
                     b.Property<string>("Overview")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PosterUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(2084)
+                        .HasColumnType("nvarchar(2084)");
 
                     b.Property<decimal?>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal?>("Rating")
-                        .HasColumnType("decimal(18,2)");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("decimal(5, 2)")
+                        .HasDefaultValue(9.9m);
 
                     b.Property<DateTime?>("ReleaseDate")
                         .HasColumnType("datetime2");
 
                     b.Property<decimal?>("Revenue")
-                        .HasColumnType("decimal(18,2)");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("decimal(18, 4)")
+                        .HasDefaultValue(9.9m);
 
                     b.Property<int?>("RunTime")
                         .HasColumnType("int");
 
                     b.Property<string>("Tagline")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(512)
+                        .HasColumnType("nvarchar(512)");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("TmdbUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(2084)
+                        .HasColumnType("nvarchar(2084)");
 
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
@@ -158,6 +161,14 @@ namespace Intrastructure.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Budget");
+
+                    b.HasIndex("Price");
+
+                    b.HasIndex("Revenue");
+
+                    b.HasIndex("Title");
 
                     b.ToTable("Movies");
                 });
@@ -252,9 +263,10 @@ namespace Intrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Name")
+                    b.Property<string>("Name")
+                        .IsRequired()
                         .HasMaxLength(20)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
@@ -316,7 +328,9 @@ namespace Intrastructure.Migrations
                         .HasColumnType("nvarchar(1024)");
 
                     b.Property<bool?>("IsLocked")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -324,12 +338,10 @@ namespace Intrastructure.Migrations
                         .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasMaxLength(16)
                         .HasColumnType("nvarchar(16)");
 
                     b.Property<string>("ProfilePictureUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Salt")
@@ -338,6 +350,9 @@ namespace Intrastructure.Migrations
                         .HasColumnType("nvarchar(1024)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.ToTable("Users");
                 });
@@ -385,7 +400,7 @@ namespace Intrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("ApplicationCore.Entities.Movie", "Movie")
-                        .WithMany("CastsofMovie")
+                        .WithMany("CastsOfMovie")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -489,7 +504,7 @@ namespace Intrastructure.Migrations
 
             modelBuilder.Entity("ApplicationCore.Entities.Movie", b =>
                 {
-                    b.Navigation("CastsofMovie");
+                    b.Navigation("CastsOfMovie");
 
                     b.Navigation("GenresOfMovie");
 
