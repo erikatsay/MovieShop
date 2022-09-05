@@ -1,13 +1,17 @@
 using ApplicationCore.Contracts.Services;
 using ApplicationCore.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Identity.Client;
 
 namespace MovieShopMVC.Controllers;
 
 public class AccountController: Controller
 {
     private readonly IAccountService _accountService;
+    
+    public AccountController(IAccountService accountService)
+    {
+        _accountService = accountService;
+    }
     public IActionResult Login()
     {
         return View();
@@ -29,15 +33,19 @@ public class AccountController: Controller
         return View();
     }
     
+
     [HttpPost]
     public async Task<IActionResult> Register(UserRegisterModel model)
     {
         var userId = await _accountService.RegisterUser(model);
-        if (userId > 0)
+
+        if (userId>0)
         {
+            // redirect to login page
             return RedirectToAction("Login");
         }
-        
+
         return View();
+
     }
 }

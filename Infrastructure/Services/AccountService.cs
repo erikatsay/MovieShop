@@ -19,6 +19,7 @@ public class AccountService:IAccountService
     public async Task<int> RegisterUser(UserRegisterModel model)
     {
         var user = await _userRepository.GetUserByEmail(model.Email);
+        
         if (user != null)
         {
             throw new Exception("Email already exists, try to login");
