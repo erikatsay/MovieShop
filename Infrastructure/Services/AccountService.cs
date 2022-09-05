@@ -24,7 +24,7 @@ public class AccountService:IAccountService
             throw new Exception("Email already exists, try to login");
         }
 
-        var salt = GetRadeomSalt();
+        var salt = GetRandomSalt();
 
         var hashedPassword = GetHashedPassword(model.Password, salt);
 
@@ -32,6 +32,7 @@ public class AccountService:IAccountService
         {
             FirstName = model.FirstName,
             LastName = model.LastName,
+            Email = model.Email,
             Salt = salt,
             HashedPassword = hashedPassword,
             DateOfBirth = model.DateOfBirth
@@ -43,15 +44,30 @@ public class AccountService:IAccountService
 
     public async Task<UserLoginSuccessModel> ValidateUser(UserLoginModel model)
     {
-        throw new NotImplementedException();
+        var user = await _userRepository.GetUserByEmail((model.Email));
+        if (user == null)
+        {
+            throw new Exception("Email does not exists, try to register first");
+        }
+
+        var hashedPassword = GetHashedPassword(model.Password, user.Salt);
+
+        if (user.HashedPassword == hashedPassword)
+        {
+            var userLoginSuccessModel = new UserLoginSuccessModel
+            {
+                Id = user.Id,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName
+            };
+            return userLoginSuccessModel;
+        }
+
+        return null;
     }
     
-    /*public Task<UserLoginModel> ValidateUser(UserLoginModel model)
-    {
-        throw new NotImplementedException();
-    }*/
-
-    private string GetRadeomSalt()
+    private string GetRandomSalt()
     {
         var randonBytes = new byte[128 / 8];
         using (var rng = RandomNumberGenerator.Create())
@@ -61,11 +77,18 @@ public class AccountService:IAccountService
 
         return Convert.ToBase64String(randonBytes);
     }
-
+    
     private string GetHashedPassword(string password, string salt)
     {
         var hased = Convert.ToBase64String(KeyDerivation.Pbkdf2(password, Convert.FromBase64String(salt), KeyDerivationPrf.HMACSHA512, 10000, 256/8));
         return hased;
     }
+    
+    /*public Task<UserLoginModel> ValidateUser(UserLoginModel model)
+    {
+        throw new NotImplementedException();
+    }#1#
+
+    */
     
 }

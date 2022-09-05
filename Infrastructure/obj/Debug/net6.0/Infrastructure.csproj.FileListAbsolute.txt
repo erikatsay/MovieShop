@@ -13,3 +13,5 @@
 /Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/obj/Debug/net6.0/refint/Infrastructure.dll
 /Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/obj/Debug/net6.0/Infrastructure.pdb
 /Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/obj/Debug/net6.0/ref/Infrastructure.dll
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/bin/Debug/net6.0/Infrastructure.runtimeconfig.json
+/Users/erikatsay/RiderProjects/MovieShopMVC/Infrastructure/obj/Debug/net6.0/Infrastructure.genruntimeconfig.cache

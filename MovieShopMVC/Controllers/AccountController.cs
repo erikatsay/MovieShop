@@ -12,9 +12,15 @@ public class AccountController: Controller
     {
         return View();
     }
-
+    
+    [HttpPost]
     public async Task<IActionResult> Login(UserLoginModel model)
     {
+        var userSuccess = await _accountService.ValidateUser(model);
+        if (userSuccess!=null && userSuccess.Id > 0)
+        {
+            return LocalRedirect("~/");
+        }
         return View();
     }
 
@@ -34,17 +40,4 @@ public class AccountController: Controller
         
         return View();
     }
- 
-    /*public async Task<UserLoginSuccessModel> ValidateUser(UserLoginModel model)
-    {
-        var user = await _userRepository.GetUserByEmail(model.Email);
-        if (user == null)
-        {
-            throw new Exception("Email does not exist, try to register first");
-
-            var hasedPassword = GetHashedPassword(model.Password, user.Salt);
-            
-            if()
-        }
-    }*/
 }
