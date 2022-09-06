@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{0A31FA1C-A0FB-4FC9-A4C7-F08C34F18098}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="MovieShopMVC/Views/Shared/_LoginInfoPartial.cshtml">
+    <Files>
+      <File FileName="MovieShopMVC/Program.cs" Line="16" Column="65" />
+      <File FileName="MovieShopMVC/Controllers/UserController.cs" Line="23" Column="42" />
+      <File FileName="MovieShopMVC/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
+      <File FileName="MovieShopMVC/Views/Shared/_LoginInfoPartial.cshtml" Line="19" Column="2" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MovieShopMVC" expanded="True">
+            <Node name="MovieShopMVC" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Infra" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Shared" expanded="True">
+                  <Node name="_LoginInfoPartial.cshtml" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.MovieShopMVC PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
+</Properties>
