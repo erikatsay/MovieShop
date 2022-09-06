@@ -19,7 +19,14 @@ public class AccountController: Controller
     {
         return View();
     }
-    
+
+    [HttpGet]
+    public async Task<IActionResult> Logout()
+    {
+        await HttpContext.SignOutAsync();
+        return RedirectToAction("Login");
+    }
+
     [HttpPost]
     public async Task<IActionResult> Login(UserLoginModel model)
     {
