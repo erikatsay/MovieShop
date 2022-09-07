@@ -52,7 +52,7 @@ public class MovieRepository : IMovieRepository
     public async Task<List<Movie>> GetTop30GrossingMovies()
     {
         // call the database
-        var movies = await _movieShopDbContext.Movies.OrderBy(m => m.Revenue).Take(30).ToListAsync();
+        var movies = await _movieShopDbContext.Movies.OrderByDescending(m => m.Revenue).Take(30).ToListAsync();
         return movies;
 
     }

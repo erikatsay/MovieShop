@@ -12,7 +12,7 @@
                 <div id="detailPage-movie-detail" class="col col-12 col-sm-5">
                     <h4>@Model.Title</h4>
                     <p>@Model.Tagline</p>
-                    <p>@Model.RunTime m| @Model.ReleaseDate.ToString().Substring(6, 4)</p>
+                    <p>@Model.RunTime m| @Model.ReleaseDate.Value.Year.ToString()</p>
                     @foreach( var Genre in @Model.Genres)
                     {
                         <span class="badge badge-secondary">@Genre.Name</span>
@@ -72,7 +72,7 @@
     </div>
   
     <div class="row second-row">
-          <div class="col col-12 col-sm-4">
+          <div class="col col-12 col-sm-4 first-col">
               <h6>MOVIE FACTS</h6>
               <hr />
               <ul class="list-group list-group-flush">

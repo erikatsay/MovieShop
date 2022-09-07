@@ -40,5 +40,4 @@ public class MovieDetailsModel
     public List<TrailerModel> Trailers { get; set; }
     public List<CastModel> Casts { get; set; }
 
-
 }

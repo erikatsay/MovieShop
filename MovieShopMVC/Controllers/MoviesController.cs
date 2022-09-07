@@ -11,7 +11,7 @@ public class MoviesController : Controller
     {
         _movieService = movieService;
     }
-
+    
 
     [HttpGet]
     public async Task<IActionResult> Details(int id)

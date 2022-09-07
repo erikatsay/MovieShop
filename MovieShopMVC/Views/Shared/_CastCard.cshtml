@@ -2,20 +2,22 @@
 @model CastModel
 
 <div class="col .col-12 .col-sm-8 ">
-    <table>
-        <tr>
-            <td class="cast-img">
-                <div class="small-oval">
-                    <img class="img-fluid" src="@Model.ProfilePath">
-                </div>
-            </td>
-            <td class="cast-name">
-                <p class="fluid">@Model.Name</p>
-            </td>
-            <td class="character-name">
-                <p class="fluid">@Model.Character</p>
-            </td>
-        </tr>
-    </table>
+    <a asp-controller="Cast" asp-action="Details" asp-route-id="@Model.Id">
+        <table>
+            <tr>
+                <td class="cast-img">
+                    <div class="small-oval">
+                        <img class="img-fluid" src="@Model.ProfilePath">
+                    </div>
+                </td>
+                <td class="cast-name">
+                    <p class="fluid">@Model.Name</p>
+                </td>
+                <td class="character-name">
+                    <p class="fluid">@Model.Character</p>
+                </td>
+            </tr>
+        </table>
+    </a>
     <hr/>
 </div>
