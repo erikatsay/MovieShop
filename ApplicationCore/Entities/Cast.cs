@@ -15,5 +15,5 @@ public class Cast
     
     public string TmdbUrl { get; set; }
 
-    private ICollection<MovieCast> MoviesOfGast { get; set; }
+    public ICollection<MovieCast> MoviesOfCast { get; set; }
 }

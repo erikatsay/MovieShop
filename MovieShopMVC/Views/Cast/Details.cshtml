@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    
+    <div class="row">
+        <div col-12>
+            <h1>@Model.Name</h1>
+
+            @if (@Model.Gender == "2")
+            {
+                <p>Gender: Male</p>
+            }
+            else
+            {
+                <p>Gender: Female</p>
+            }
+            <img src=@Model.ProfilePath>
+        </div>
+    </div>
+    
+    <div class="row">
+        @foreach (var movie in Model.Movies)
+        {
+            <div class="col-6 col-lg-3 col-sm-4 col-xl-2">
+                <partial name = "_MovieCard" model="movie" />
+            </div>
+        }
+    </div>
+</div>
+
+
+
+

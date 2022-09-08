@@ -22,7 +22,7 @@ public class HomeController : Controller
     {
         
         var movies = await _movieService.GetTop30GrossingMovies();
-        
+
         return View(movies);
     }
 

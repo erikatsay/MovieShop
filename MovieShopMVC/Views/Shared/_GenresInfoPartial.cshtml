@@ -1,13 +1,12 @@
-
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle text-secondary" role="button" data-bs-toggle="dropdown" aria-expanded="False">
         GENRES
     </a>
     <div class="dropdown-menu">
-        <a class="dropdown-item" asp-controller="Movies" asp-action="GenreMovies" >Adventure</a>
-        <a class="dropdown-item" asp-controller="Movies" asp-action="GenreMovies">Fantasy</a>
-        <a class="dropdown-item" asp-controller="Movies" asp-action="GenreMovies">Animation</a>
-        <a class="dropdown-item" asp-controller="Movies" asp-action="GenreMovies">Drama</a>
+        <a class="dropdown-item" asp-controller="Movies" asp-action="GenreMovies" asp-route-id="1">Adventure</a>
+        <a class="dropdown-item" asp-controller="Movies" asp-action="GenreMovies" asp-route-id="2">Fantasy</a>
+        <a class="dropdown-item" asp-controller="Movies" asp-action="GenreMovies" asp-route-id="3">Animation</a>
+        <a class="dropdown-item" asp-controller="Movies" asp-action="GenreMovies" asp-route-id="4">Drama</a>
     </div>
 </li>
 
