@@ -16,6 +16,12 @@ public class CastService : ICastService
     public async Task<CastDetailsModel> GetCastDetails(int castId)
     {
         var castDetails = await _castRepository.GetById(castId);
+        
+        
+        if (castDetails == null)
+        {
+            return null;
+        }
 
         var castDetailModel = new CastDetailsModel
         {

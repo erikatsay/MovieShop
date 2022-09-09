@@ -1,3 +1,4 @@
+using ApplicationCore.Contracts.Services;
 using ApplicationCore.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +15,19 @@ public class UserController : Controller
     public UserController(ICurrentUser currentUser)
     {
         _currentUser = currentUser;
+    }
+    
+    [HttpGet]
+    [HttpPost]
+    public async Task<IActionResult> Buy()
+    {
+        return View();
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> Review()
+    {
+        throw new NotImplementedException();
     }
 
     [HttpGet]
@@ -34,12 +48,4 @@ public class UserController : Controller
     {
         return View();
     }
-    
-    [HttpPost]
-    public async Task<IActionResult> BuyMovie()
-    {
-        return View();
-    }
-    
-
 }

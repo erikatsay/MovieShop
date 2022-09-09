@@ -1,3 +1,4 @@
+using System.Globalization;
 using ApplicationCore.Contracts.Repository;
 using ApplicationCore.Contracts.Services;
 using ApplicationCore.Models;
@@ -84,12 +85,16 @@ public class AccountService:IAccountService
         var hased = Convert.ToBase64String(KeyDerivation.Pbkdf2(password, Convert.FromBase64String(salt), KeyDerivationPrf.HMACSHA512, 10000, 256/8));
         return hased;
     }
-    
-    /*public Task<UserLoginModel> ValidateUser(UserLoginModel model)
-    {
-        throw new NotImplementedException();
-    }#1#
 
-    */
-    
+    public async Task<Boolean> CheckEmail(string email)
+    {
+        var user = await _userRepository.GetUserByEmail(email);
+        if (user == null)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
 }
